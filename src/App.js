@@ -5,12 +5,13 @@ import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenS
 import { AdaptivityProvider, AppRoot } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import QrShot from './panels/QrList';
+import QrMain from './panels/QrMain';
 import QrList from './panels/QrList';
-import QrCount from './panels/QrList';
+import QrCount from './panels/QrCount';
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('QrShot');
+	const [activePanel, setActivePanel] = useState("QrMain");
+
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -30,7 +31,8 @@ const App = () => {
     getUserData();
 	}, []);
 
-	const go = e => {
+	const go = (e) => {
+	  console.log(activePanel, e.currentTarget.dataset.to);
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
@@ -39,14 +41,16 @@ const App = () => {
 			<AppRoot>
 				<View activePanel={activePanel} >
           {/*popout={popout}*/}
-					<QrShot id='QrShot' go={go} />
-					<QrList id='QrList' go={go} />
-					<QrCount id='QrCount' go={go} />
+					<QrMain id='QrMain' go={go}/>
+					<QrCount id='QrCount' go={go}/>
+					<QrList id='QrList' go={go}/>
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
 	);
-}
+};
 
 export default App;
+
+// go={go}
 
