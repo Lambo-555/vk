@@ -130,7 +130,7 @@ const QrMain = props => {
         <Group>
           <Div>
             <Headline weight="regular">Приложение сканирует QR-коды. Ссылки валидируются
-              через VK API <i>(utils.checkLink)</i></Headline>
+              через VK API <i>(utils.checkLink). В сторисах вы смотрите на землю, как космонавт, с разных сторон и на разной дистанции!</i></Headline>
           </Div>
         </Group>
 
