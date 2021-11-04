@@ -5,7 +5,7 @@ import { Icon28InfoOutline } from '@vkontakte/icons';
 import bridge from "@vkontakte/vk-bridge";
 
 const QrList = props => {
-  const [qrList, setQrList] = useState([1,2,3]);
+  const [qrList, setQrList] = useState([]);
   const getCount = async () => {
     try {
       const storageKeys = await bridge.send("VKWebAppStorageGetKeys", {"count": 1000, "offset": 0});

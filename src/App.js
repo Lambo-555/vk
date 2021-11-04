@@ -39,9 +39,8 @@ const App = () => {
 	return (
 		<AdaptivityProvider>
 			<AppRoot>
-				<View activePanel={activePanel} >
-          {/*popout={popout}*/}
-					<QrMain id='QrMain' go={go}/>
+				<View activePanel={activePanel}  popout={popout}>
+					<QrMain id='QrMain' go={go} setPopout={setPopout}/>
 					<QrCount id='QrCount' go={go}/>
 					<QrList id='QrList' go={go}/>
 				</View>
